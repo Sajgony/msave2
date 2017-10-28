@@ -1,5 +1,11 @@
-<html>
 
+
+
+
+////Hot Dog html////
+
+<html>
+ 
 <head>
   <title>msave0.2</title>
 </head>
@@ -13,11 +19,9 @@
 
 
 
-<!--Import Firebase -->
-<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-database.js"></script> 
-
+<!--Import Firebase  -->
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
 <script src="script.js"></script>
 
 </body>
@@ -25,21 +29,8 @@
 
 
 
-/** Script.js */
 
-// Conection to Firebase
-var config = {
-  apiKey: "AIzaSyBcTy3wtLKoTNXQ_S7AUp5vMGH9h9yEdLk",
-  authDomain: "msave-2-firestore.firebaseapp.com",
-  databaseURL: "https://msave-2-firestore.firebaseio.com",
-  projectId: "msave-2-firestore",
-  storageBucket: "msave-2-firestore.appspot.com",
-  messagingSenderId: "930749833897"
-};
-firebase.initializeApp(config);
-
-
-var firestore = firebase.firestore();
+////HotDog js///
 
 docRef = firestore.doc("samples/sandwichData")
 const outputHeader = document.querySelector("#hotDogOutput");
@@ -53,7 +44,7 @@ saveButton.addEventListener("click", function () {
   docRef.set({
     hotDogStatus: textToSave
   }).then(function() {
-    console.log("Status saved!" + user.email);
+    console.log("Status saved!" );
   }).catch(function(error) {
     console.log("Got an error:", error);
   });
