@@ -3,69 +3,95 @@
 <head>
   <title>msave0.2</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 </head>
 
 <body>
 
-  <h2 id="name"></h2>
 
 
-<canvas width="500px" id="myChart"></canvas>
+  <div class="container">
+    <div class="row">
+      <div class="col s6 offset-s3">
+
+        <h4 id="name"></h4>
+
+        <canvas width="500px" id="myChart"></canvas>
 
 
-  <div id="currentCycleFrame">
-    My Budget: <input id="showBudget" value="loading ..." ></input><br>
-    I have spent: <input id="showSpent" value="loading ..." ></input><br>
-    Money Left: <input id="showMoneyLeft" value="loading ..." ></input><br>
-    Spent / day: <input id="showSpentperDay" value="loading ..." ></input><br>
-    
-<select id="currentDay" name="Current Day">
+        <div id="currentCycleFrame">
+          <input type="text" class="datepicker"><br> My Budget: <input id="showBudget" value="loading ..."></input><br> I
+          have spent: <input id="showSpent" value="loading ..."></input><br> Money Left: <input id="showMoneyLeft" value="loading ..."></input><br>          Spent / day:
+          <input id="showSpentperDay" value="loading ..."></input><br>
+
+          <select id="currentDay" name="Current Day">
   <option value="1">Day 1</option>
   <option value="2">Day 2</option>
   <option value="3">Day 3</option>
   <option value="4">Day 4</option>
-</select> 
+</select>
 
 
-    <br> Add Expanse: <input type="number" id="addExpanseInput" value="">
-    <button type="button" onclick="AddExpanse()">Send Value</button><br>
-    <button type="button" onclick="document.getElementById('newCycleFrame').style.visibility = 'visible'">
+          <br> Add Expanse: <input type="number" id="addExpanseInput" value="">
+          <button type="button" onclick="AddExpanse()">Send Value</button><br>
+          <button type="button" onclick="document.getElementById('newCycleFrame').style.visibility = 'visible'">
 New Cycle</button>
+        </div>
+
+
+        <div id="newCycleFrame">
+          <input type="text" class="datepicker"><br>
+          Budget: <input id="NewBudgetValue" type="number" value="" required> Number of days:
+          <input id="NewBudgetDays" type="number" value="">
+          <br>
+          <button type="submit" onclick="createCycle()">Start Cycle</button><br>
+        </div>
+
+
+
+        <!--Import Firebase  -->
+        <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+        <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+      </div>
+    </div>
   </div>
 
-
-  <div id="newCycleFrame">
-    Budget: <input id="NewBudgetValue" type="number" value="" required >
-    Number of days: <input id="NewBudgetDays" type="number" value="" >
-    <br>
-    <button type="submit" onclick="createCycle()">Start Cycle</button><br>
-  </div>
-
-
-
-  <!--Import Firebase  -->
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
-  <script src="script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 </body>
 
-
 <script>
-var ctx = document.getElementById('myChart').getContext('2d');
-var myBubbleChart = new Chart(ctx,{
-    type: 'bubble',
+                                         var ctx = document.getElementById('myChart').getContext('2d');
+                                         var myBubbleChart = new Chart(ctx, {
+                                           type: 'bubble',
 
-    // The data for our dataset
-      
-        
-    
+                                           // The data for our dataset
 
-    // Configuration options go here
-    options: {
-        responsive: false
-    }
-});
+
+
+
+                                           // Configuration options go here
+                                           options: {
+                                             responsive: false
+                                           }
+                                         });
+
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+
+
 </script>
 
 </html>
