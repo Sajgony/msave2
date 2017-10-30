@@ -67,10 +67,10 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
 
     // 3.2 Showing Interface based on Cycle number
     .then(function () {
-
-      docRef.get().then(function (doc) {
+      docRef.get().then(function (doc) {        
+        console.log("kkukuuku");
         x = doc.data();
-        var cycleRef = x.activecycle;
+        var cycleRef = x.activecycle;        
         if (cycleRef === 0) {
           console.log("User's cycle is 0, loading new cycle interface");
           newCycleFrame.style.visibility = "visible";
@@ -124,7 +124,7 @@ function createCycle() {
     days: newBudgetDays.value,
     perday: newBudgetValue.value / newBudgetDays.value,
     currperday: newBudgetValue.value / newBudgetDays.value
-  })
+  }) 
 
     // 4.1 Update new Active Cycle
     .then(function () {

@@ -1,162 +1,36 @@
-[debug] [2017-10-26T04:29:21.854Z] ----------------------------------------------------------------------
-[debug] [2017-10-26T04:29:21.856Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Owner\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-10-26T04:29:21.856Z] CLI Version:   3.13.1
-[debug] [2017-10-26T04:29:21.856Z] Platform:      win32
-[debug] [2017-10-26T04:29:21.856Z] Node Version:  v8.8.1
-[debug] [2017-10-26T04:29:21.857Z] Time:          Wed Oct 25 2017 22:29:21 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:29:21.857Z] ----------------------------------------------------------------------
+[debug] [2017-10-30T05:10:59.637Z] ----------------------------------------------------------------------
+[debug] [2017-10-30T05:10:59.639Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Owner\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-10-30T05:10:59.639Z] CLI Version:   3.13.1
+[debug] [2017-10-30T05:10:59.639Z] Platform:      win32
+[debug] [2017-10-30T05:10:59.639Z] Node Version:  v8.8.1
+[debug] [2017-10-30T05:10:59.640Z] Time:          Sun Oct 29 2017 23:10:59 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-10-30T05:10:59.640Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-10-26T04:29:21.869Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-10-26T04:29:21.869Z] > authorizing via signed-in user
-[debug] [2017-10-26T04:29:21.871Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/firecloud2-aac4c  
- Wed Oct 25 2017 22:29:21 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:29:22.415Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-26T04:29:22.416Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/firecloud2-aac4c/tokens  
- Wed Oct 25 2017 22:29:22 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:29:22.898Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\Owner\Desktop\cx\msave2'...
-[info] 
-[debug] [2017-10-26T04:29:22.901Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firecloud2-aac4c  
- Wed Oct 25 2017 22:29:22 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:29:23.336Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-26T04:29:23.336Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/870285831664/clients/_:getWebAppConfig  
- Wed Oct 25 2017 22:29:23 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:29:23.730Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-26T04:29:23.747Z] TypeError: Cannot read property 'public' of undefined
-    at Server.<anonymous> (C:\Users\Owner\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\hosting.js:34:18)
-    at Object.onceWrapper (events.js:312:30)
-    at emitNone (events.js:105:13)
-    at Server.emit (events.js:207:7)
-    at emitListeningNT (net.js:1381:10)
-    at _combinedTickCallback (internal/process/next_tick.js:135:11)
-    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
-[error] 
-[error] Error: An unexpected error has occurred.
-[debug] [2017-10-26T04:29:48.460Z] ----------------------------------------------------------------------
-[debug] [2017-10-26T04:29:48.462Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Owner\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-10-26T04:29:48.462Z] CLI Version:   3.13.1
-[debug] [2017-10-26T04:29:48.462Z] Platform:      win32
-[debug] [2017-10-26T04:29:48.462Z] Node Version:  v8.8.1
-[debug] [2017-10-26T04:29:48.463Z] Time:          Wed Oct 25 2017 22:29:48 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:29:48.463Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2017-10-26T04:29:48.472Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-10-26T04:29:48.473Z] > authorizing via signed-in user
-[debug] [2017-10-26T04:29:48.475Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/firecloud2-aac4c  
- Wed Oct 25 2017 22:29:48 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:29:48.918Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-26T04:29:48.919Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/firecloud2-aac4c/tokens  
- Wed Oct 25 2017 22:29:48 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:29:55.219Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\Owner\Desktop\cx\msave2'...
-[info] 
-[debug] [2017-10-26T04:29:55.221Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firecloud2-aac4c  
- Wed Oct 25 2017 22:29:55 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:29:55.625Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-26T04:29:55.625Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/870285831664/clients/_:getWebAppConfig  
- Wed Oct 25 2017 22:29:55 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:29:56.102Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-26T04:29:56.118Z] TypeError: Cannot read property 'public' of undefined
-    at Server.<anonymous> (C:\Users\Owner\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\hosting.js:34:18)
-    at Object.onceWrapper (events.js:312:30)
-    at emitNone (events.js:105:13)
-    at Server.emit (events.js:207:7)
-    at emitListeningNT (net.js:1381:10)
-    at _combinedTickCallback (internal/process/next_tick.js:135:11)
-    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
-[error] 
-[error] Error: An unexpected error has occurred.
-[debug] [2017-10-26T04:38:26.582Z] ----------------------------------------------------------------------
-[debug] [2017-10-26T04:38:26.584Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Owner\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-10-26T04:38:26.584Z] CLI Version:   3.13.1
-[debug] [2017-10-26T04:38:26.584Z] Platform:      win32
-[debug] [2017-10-26T04:38:26.584Z] Node Version:  v8.8.1
-[debug] [2017-10-26T04:38:26.585Z] Time:          Wed Oct 25 2017 22:38:26 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:38:26.585Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2017-10-26T04:38:26.598Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-10-26T04:38:26.598Z] > authorizing via signed-in user
-[debug] [2017-10-26T04:38:26.600Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/firecloud2-aac4c  
- Wed Oct 25 2017 22:38:26 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:38:27.121Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-26T04:38:27.122Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/firecloud2-aac4c/tokens  
- Wed Oct 25 2017 22:38:27 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:38:27.560Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\Owner\Desktop\cx\msave2'...
-[info] 
-[debug] [2017-10-26T04:38:27.563Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firecloud2-aac4c  
- Wed Oct 25 2017 22:38:27 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:38:27.889Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-26T04:38:27.889Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/870285831664/clients/_:getWebAppConfig  
- Wed Oct 25 2017 22:38:27 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:38:28.343Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: ./
-[info] +  hosting: Local server: http://localhost:5000
-
-[debug] [2017-10-26T04:39:21.645Z] ----------------------------------------------------------------------
-[debug] [2017-10-26T04:39:21.647Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Owner\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-10-26T04:39:21.647Z] CLI Version:   3.13.1
-[debug] [2017-10-26T04:39:21.647Z] Platform:      win32
-[debug] [2017-10-26T04:39:21.647Z] Node Version:  v8.8.1
-[debug] [2017-10-26T04:39:21.647Z] Time:          Wed Oct 25 2017 22:39:21 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:39:21.647Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2017-10-26T04:39:21.659Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-10-26T04:39:21.660Z] > authorizing via signed-in user
-[debug] [2017-10-26T04:39:21.661Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/firecloud2-aac4c  
- Wed Oct 25 2017 22:39:21 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:39:22.194Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-26T04:39:22.195Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/firecloud2-aac4c/tokens  
- Wed Oct 25 2017 22:39:22 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:39:22.742Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\Owner\Desktop\cx\msave2'...
-[info] 
-[debug] [2017-10-26T04:39:22.744Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firecloud2-aac4c  
- Wed Oct 25 2017 22:39:22 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:39:23.190Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-26T04:39:23.190Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/870285831664/clients/_:getWebAppConfig  
- Wed Oct 25 2017 22:39:23 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-26T04:39:23.556Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: ./
-[info] +  hosting: Local server: http://localhost:5000
-
-[debug] [2017-10-27T20:06:04.535Z] ----------------------------------------------------------------------
-[debug] [2017-10-27T20:06:04.537Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Owner\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-10-27T20:06:04.538Z] CLI Version:   3.13.1
-[debug] [2017-10-27T20:06:04.538Z] Platform:      win32
-[debug] [2017-10-27T20:06:04.538Z] Node Version:  v8.8.1
-[debug] [2017-10-27T20:06:04.538Z] Time:          Fri Oct 27 2017 14:06:04 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-27T20:06:04.538Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2017-10-27T20:06:04.557Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-10-27T20:06:04.558Z] > authorizing via signed-in user
-[debug] [2017-10-27T20:06:04.560Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2017-10-27T20:06:04.560Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/LcNcHOVWt-WpSCLA9erswjefPhyPB1OZrxsrS7AlySzvw7UMMNX6mf_iZzbb5ack',
+[debug] [2017-10-30T05:10:59.656Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-30T05:10:59.656Z] > authorizing via signed-in user
+[debug] [2017-10-30T05:10:59.658Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-30T05:10:59.658Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/LcNcHOVWt-WpSCLA9erswjefPhyPB1OZrxsrS7AlySzvw7UMMNX6mf_iZzbb5ack',
   client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
   client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
   grant_type: 'refresh_token',
   scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Fri Oct 27 2017 14:06:04 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-27T20:06:04.900Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-27T20:06:04.914Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/firecloud2-aac4c  
- Fri Oct 27 2017 14:06:04 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-27T20:06:05.542Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-27T20:06:05.543Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/firecloud2-aac4c/tokens  
- Fri Oct 27 2017 14:06:05 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-27T20:06:06.110Z] <<< HTTP RESPONSE 200
+ Sun Oct 29 2017 23:10:59 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-10-30T05:10:59.981Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-30T05:10:59.995Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/firecloud2-aac4c  
+ Sun Oct 29 2017 23:10:59 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-10-30T05:11:00.597Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-30T05:11:00.598Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/firecloud2-aac4c/tokens  
+ Sun Oct 29 2017 23:11:00 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-10-30T05:11:01.029Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\Owner\Desktop\cx\msave2'...
 [info] 
-[debug] [2017-10-27T20:06:06.113Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firecloud2-aac4c  
- Fri Oct 27 2017 14:06:06 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-27T20:06:06.533Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-27T20:06:06.533Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/870285831664/clients/_:getWebAppConfig  
- Fri Oct 27 2017 14:06:06 GMT-0600 (Mountain Daylight Time)
-[debug] [2017-10-27T20:06:06.952Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-30T05:11:01.032Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firecloud2-aac4c  
+ Sun Oct 29 2017 23:11:01 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-10-30T05:11:01.365Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-30T05:11:01.365Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/870285831664/clients/_:getWebAppConfig  
+ Sun Oct 29 2017 23:11:01 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-10-30T05:11:01.759Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: ./
 [info] +  hosting: Local server: http://localhost:5000
 

@@ -2,12 +2,12 @@
     padding: 2rem;
     border: 1px dotted silver;
      margin-top: 4rem;
-     visibility: hidden;
+     visibility: hidden; 
      }
 
 #currentCycleFrame {
     padding: 2rem; 
     border: 1px dotted silver;
-    visibility: hidden; 
+   visibility: hidden;
     }
 

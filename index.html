@@ -21,8 +21,8 @@
 
         <h4 id="name"></h4>
 
-        <canvas width="500px" id="myChart"></canvas>
 
+        <canvas width="500px" id="myChart"></canvas>
 
         <div id="currentCycleFrame">
           <input type="text" class="datepicker"><br> My Budget: <input id="showBudget" value="loading ..."></input><br> I
@@ -45,7 +45,9 @@ New Cycle</button>
 
 
         <div id="newCycleFrame">
-          <input type="text" class="datepicker"><br>
+          
+          <input type="text" class="datepicker">
+          
           Budget: <input id="NewBudgetValue" type="number" value="" required> Number of days:
           <input id="NewBudgetDays" type="number" value="">
           <br>
@@ -65,6 +67,7 @@ New Cycle</button>
   </div>
 
 </body>
+
 
 <script>
                                          var ctx = document.getElementById('myChart').getContext('2d');
