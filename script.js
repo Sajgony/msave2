@@ -9,6 +9,7 @@ const showBudget = document.querySelector("#showBudget");
 const showSpent = document.querySelector("#showSpent");
 const showMoneyLeft = document.querySelector("#showMoneyLeft");
 const addExpanse = document.querySelector("#addExpanseInput");
+const startDate = document.querySelector("#startDate");
 
 var User = "";
 var UserData = "";
@@ -68,7 +69,6 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
     // 3.2 Showing Interface based on Cycle number
     .then(function () {
       docRef.get().then(function (doc) {        
-        console.log("kkukuuku");
         x = doc.data();
         var cycleRef = x.activecycle;        
         if (cycleRef === 0) {
@@ -110,6 +110,13 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
 
 // 4. Create New Cycle--------------------------------------------------------------------------
 function createCycle() {
+
+  var date = $('#datepicker').val();
+  console.log(date);
+
+  var startDateX = startDate.value;
+  console.log(startDateX);
+
   newCycleNumber = UserData.activecycle + 1;
   cycleRef = firestore.doc('/msave/core/users/' + User.email + '/cycles/' + newCycleNumber);
   todayDate = new Date();
@@ -141,7 +148,6 @@ function createCycle() {
 // 5. Main Screen--------------------------------------------------------------------------
 function mainScreen() {
   userNameHolder.innerText = "Welcome " + UserData.name + " you are on your " + UserData.activecycle + " cycle";
-
 
   cycleRef.onSnapshot(function (doc) {
     var x = doc.data();

@@ -14,7 +14,6 @@
 <body>
 
 
-
   <div class="container">
     <div class="row">
       <div class="col s6 offset-s3">
@@ -22,10 +21,18 @@
         <h4 id="name"></h4>
 
 
+<div class="col s12 m6">
+     <label for="Icon_date">Date Born</label>
+     <input type="date" class="datepicker" id="datepicker">
+
+</div>
+
+
+
         <canvas width="500px" id="myChart"></canvas>
 
         <div id="currentCycleFrame">
-          <input type="text" class="datepicker"><br> My Budget: <input id="showBudget" value="loading ..."></input><br> I
+          <input type="text" class="datepicker" id="startDate"><br> My Budget: <input id="showBudget" value="loading ..."></input><br> I
           have spent: <input id="showSpent" value="loading ..."></input><br> Money Left: <input id="showMoneyLeft" value="loading ..."></input><br>          Spent / day:
           <input id="showSpentperDay" value="loading ..."></input><br>
 
@@ -45,13 +52,19 @@ New Cycle</button>
 
 
         <div id="newCycleFrame">
-          
-          <input type="text" class="datepicker">
-          
-          Budget: <input id="NewBudgetValue" type="number" value="" required> Number of days:
-          <input id="NewBudgetDays" type="number" value="">
-          <br>
-          <button type="submit" onclick="createCycle()">Start Cycle</button><br>
+          <div class="col s6">
+           Start Cycle: <input type="text" class="datepicker">
+          </div>
+          <div class="col s6">
+           Finish Cycle:<input type="text" class="datepicker">
+          </div>
+
+
+
+          Budget: <input id="NewBudgetValue" type="number" value="" required>
+           Number of days: <input id="NewBudgetDays" type="number" value="">
+            <br>
+            <button type="submit" onclick="createCycle()">Start Cycle</button><br>
         </div>
 
 
@@ -70,29 +83,30 @@ New Cycle</button>
 
 
 <script>
-                                         var ctx = document.getElementById('myChart').getContext('2d');
-                                         var myBubbleChart = new Chart(ctx, {
-                                           type: 'bubble',
-
-                                           // The data for our dataset
-
+                                           var ctx = document.getElementById('myChart').getContext('2d');
+                                           var myBubbleChart = new Chart(ctx, {
+                                             type: 'bubble',
+                                             // The data for our dataset
 
 
 
-                                           // Configuration options go here
-                                           options: {
-                                             responsive: false
-                                           }
-                                         });
+                                             // Configuration options go here
+                                             options: {
+                                               responsive: false
+                                             }
+                                           });
 
-  $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15, // Creates a dropdown of 15 years to control year,
-    today: 'Today',
-    clear: 'Clear',
-    close: 'Ok',
-    closeOnSelect: false // Close upon selecting a date,
-  });
+                                           $('.datepicker').pickadate({
+                                             selectMonths: true, // Creates a dropdown to control month
+                                             selectYears: 15, // Creates a dropdown of 15 years to control year,
+                                             today: 'Today',
+                                             clear: 'Clear',
+                                             close: 'Ok',
+                                             closeOnSelect: false // Close upon selecting a date,
+                                           });
+
+
+
 
 
 </script>
