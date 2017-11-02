@@ -115,6 +115,7 @@ function createCycle() {
   console.log(date);
 
   var startDateX = startDate.value;
+  //var startDateY = startDateX.getDate(); 
   console.log(startDateX);
 
   newCycleNumber = UserData.activecycle + 1;
