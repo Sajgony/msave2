@@ -23,7 +23,7 @@
         <canvas width="500px" id="myChart"></canvas>
 
         <div id="currentCycleFrame">
-          My Budget: <input id="showBudget" value="loading ..."></input><br>          I have spent: <input id="showSpent" value="loading ..."></input><br> Money Left: <input id="showMoneyLeft" value="loading ..."></input><br>          Spent / day:
+          My Budget: <input id="showBudget" value="loading ..."></input><br>I have spent: <input id="showSpent" value="loading ..."></input><br>          Money Left: <input id="showMoneyLeft" value="loading ..."></input><br> Spent / day:
           <input id="showSpentperDay" value="loading ..."></input><br>
 
           <select id="currentDay" name="Current Day">
@@ -42,20 +42,16 @@ New Cycle</button>
 
 
         <div id="newCycleFrame">
+
           <div class="col s6">
-            Start Cycle: <input type="date" id="startDate">
+            Start Cycle: <input type="date" id="field1">
           </div>
           <div class="col s6">
-            Finish Cycle:<input type="text" class="datepicker">
+            End Cycle: <input type="date" id="field2">
           </div>
-
-
-
-          Budget: <input id="NewBudgetValue" type="number" value="" required> Number of days:
-          <input id="NewBudgetDays" type="number"
-            value="">
+          Budget: <input id="NewBudgetValue" type="number" value="" required> 
             <br>
-            <button type="submit" onclick="createCycle()">Start Cycle</button><br>
+            <input type="button" onClick="createCycle('field1','field2')" value="Submit">
         </div>
 
 
@@ -64,6 +60,9 @@ New Cycle</button>
         <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
         <script src="script.js"></script>
+        <script src="newcycle.js"></script>
+        <script src="newexpanse.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
       </div>
@@ -74,27 +73,27 @@ New Cycle</button>
 
 
 <script>
-                                           var ctx = document.getElementById('myChart').getContext('2d');
-                                           var myBubbleChart = new Chart(ctx, {
-                                             type: 'bubble',
-                                             // The data for our dataset
+                                          var ctx = document.getElementById('myChart').getContext('2d');
+                                          var myBubbleChart = new Chart(ctx, {
+                                            type: 'bubble',
+                                            // The data for our dataset
 
 
 
-                                             // Configuration options go here
-                                             options: {
-                                               responsive: false
-                                             }
-                                           });
+                                            // Configuration options go here
+                                            options: {
+                                              responsive: false
+                                            }
+                                          });
 
-                                           $('.datepicker').pickadate({
-                                             selectMonths: true, // Creates a dropdown to control month
-                                             selectYears: 15, // Creates a dropdown of 15 years to control year,
-                                             today: 'Today',
-                                             clear: 'Clear',
-                                             close: 'Ok',
-                                             closeOnSelect: false // Close upon selecting a date,
-                                           });
+                                          $('.datepicker').pickadate({
+                                            selectMonths: true, // Creates a dropdown to control month
+                                            selectYears: 15, // Creates a dropdown of 15 years to control year,
+                                            today: 'Today',
+                                            clear: 'Clear',
+                                            close: 'Ok',
+                                            closeOnSelect: false // Close upon selecting a date,
+                                          });
 
 </script>
 

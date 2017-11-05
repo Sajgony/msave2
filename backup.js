@@ -60,4 +60,45 @@ loadButton.addEventListener("click", function() {
 
 
 ////msave js///
+// 4. Create New Cycle--------------------------------------------------------------------------
+function createCycle() {
+
+  var date = $('#datepicker').val();
+  console.log(date);
+
+  var startDateX = startDate.value;
+  //var startDateY = startDateX.getDate(); 
+  console.log(startDateX);
+
+  newCycleNumber = UserData.activecycle + 1;
+  cycleRef = firestore.doc('/msave/core/users/' + User.email + '/cycles/' + newCycleNumber);
+  todayDate = new Date();
+
+   
+  cycleRef.set({
+    id: newCycleNumber,
+    budget: newBudgetValue.value,
+    created: todayDate,
+    spent: "0",
+    left: newBudgetValue.value,
+    days: newBudgetDays.value,
+    perday: newBudgetValue.value / newBudgetDays.value,
+    currperday: newBudgetValue.value / newBudgetDays.value
+  }) 
+
+    // 4.1 Update new Active Cycle
+    .then(function () {
+      docRef.update({
+        activecycle: newCycleNumber
+      })
+      currentCycleFrame.style.visibility = "visible"
+      newCycleFrame.style.visibility = "hidden";
+      console.log("5.b " + "Cycle " + newCycleNumber + " has been created and set as active cycle");
+
+    })
+}
+
+
+
+
 

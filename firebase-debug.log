@@ -106,3 +106,39 @@
 [info] i  hosting: Serving hosting files from: ./
 [info] +  hosting: Local server: http://localhost:5000
 
+[debug] [2017-11-02T21:50:01.249Z] ----------------------------------------------------------------------
+[debug] [2017-11-02T21:50:01.251Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Owner\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-11-02T21:50:01.251Z] CLI Version:   3.13.1
+[debug] [2017-11-02T21:50:01.251Z] Platform:      win32
+[debug] [2017-11-02T21:50:01.251Z] Node Version:  v8.8.1
+[debug] [2017-11-02T21:50:01.252Z] Time:          Thu Nov 02 2017 15:50:01 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-11-02T21:50:01.252Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-02T21:50:01.274Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-02T21:50:01.274Z] > authorizing via signed-in user
+[debug] [2017-11-02T21:50:01.277Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-11-02T21:50:01.277Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/LcNcHOVWt-WpSCLA9erswjefPhyPB1OZrxsrS7AlySzvw7UMMNX6mf_iZzbb5ack',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Nov 02 2017 15:50:01 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-11-02T21:50:01.564Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T21:50:01.577Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/firecloud2-aac4c  
+ Thu Nov 02 2017 15:50:01 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-11-02T21:50:02.120Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T21:50:02.120Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/firecloud2-aac4c/tokens  
+ Thu Nov 02 2017 15:50:02 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-11-02T21:50:02.723Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Owner\Desktop\cx\msave2'...
+[info] 
+[debug] [2017-11-02T21:50:02.726Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firecloud2-aac4c  
+ Thu Nov 02 2017 15:50:02 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-11-02T21:50:03.164Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T21:50:03.164Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/870285831664/clients/_:getWebAppConfig  
+ Thu Nov 02 2017 15:50:03 GMT-0600 (Mountain Daylight Time)
+[debug] [2017-11-02T21:50:03.623Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] +  hosting: Local server: http://localhost:5000
+
