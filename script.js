@@ -3,6 +3,7 @@ const newCycleFrame = document.querySelector("#newCycleFrame");
 const newBudgetValue = document.querySelector("#NewBudgetValue");
 const userNameHolder = document.querySelector("#name");
 
+const showNewSpentperDay = document.querySelector("#showNewSpentperDay");
 const showSpentperDay = document.querySelector("#showSpentperDay");
 const showBudget = document.querySelector("#showBudget");
 const showSpent = document.querySelector("#showSpent");
@@ -12,8 +13,13 @@ const startDate = document.querySelector("#startDate");
 
 var User = "";
 var UserData = "";
+var cycleData =""; // not used probably delete it 
 var docRef = "";
 var cycleRef = "";
+
+var todayYear = "";
+var todayMonth = "";
+var todayDay = "";
 
 
 // 2. Initialize Firebase-------------------------------------------------------------------------
@@ -28,7 +34,6 @@ var config = {
 firebase.initializeApp(config);
 
 var firestore = firebase.firestore();
-
 
 
 // 3. Authentication--------------------------------------------------------------------------------
@@ -50,7 +55,8 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
     if (doc && doc.exists) {
       x = doc.data();
       console.log("2.a " + "User: " + x.name + " founded in db");
-    }
+
+}
     else {
       docRef.set({
         email: user.email,
@@ -67,11 +73,11 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
 
     // 3.2 Showing Interface based on Cycle number
     .then(function () {
-      docRef.get().then(function (doc) {        
+      docRef.get().then(function (doc) {
         x = doc.data();
-        var cycleRef = x.activecycle;      //Expose active cycle DB  
+        var cycleRef = x.activecycle;   
         if (cycleRef === 0) {
-          console.log("3.a " +  "User's cycle is 0, loading new cycle interface");
+          console.log("3.a " + "User's cycle is 0, loading new cycle interface");
           newCycleFrame.style.visibility = "visible";
         }
         else {
@@ -81,17 +87,17 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
       })
     })
 
-    // 3.3 Pre-load Main Screen !!!!!!!!!!!
+    // 3.3 Pre-load Main Screen 
     .then(function () {
       docRef.onSnapshot(function (doc) {
         UserData = doc.data(); //Exposing UserData 
         cycleRef = firestore.doc('/msave/core/users/' + UserData.email + '/cycles/' + UserData.activecycle); // Exposing cuurent Cycle
         if (UserData.activecycle != 0) { //don't update for brand new user
-          mainScreen();
+        
+        mainScreen();
         }
       })
     })
-
 
 
 }).catch(function (error) {
@@ -106,24 +112,23 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
 });
 
 
-
-// 4. Create New Cycle--------------------------------------------------------------------------
-// Placed at newcycle.js
-
-
-// 5. Main Screen--------------------------------------------------------------------------
+// 4. Main Screen--------------------------------------------------------------------------
 function mainScreen() {
   userNameHolder.innerText = "Welcome " + UserData.name + " you are on your " + UserData.activecycle + " cycle";
 
   cycleRef.onSnapshot(function (doc) {
     var x = doc.data();
+    showNewSpentperDay.value = x.currperday;
     showSpentperDay.value = x.perday;
     showBudget.value = x.budget;
     showSpent.value = x.spent;
     showMoneyLeft.value = x.left;
-    console.log("5. " + "My Budget is: " + x.budget + " I have spent: " + x.spent + " I have left:" + x.left);
+    console.log("4. " + "My Budget is: " + x.budget + " I have spent: " + x.spent + " I have left:" + x.left);
   });
 }
+
+// 5. Create New Cycle--------------------------------------------------------------------------
+// Placed at newcycle.js
 
 // 6. Add Expanse--------------------------------------------------------------------------
 // Placed at newexpanse.js

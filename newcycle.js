@@ -1,4 +1,4 @@
-// 4. Create New Cycle--------------------------------------------------------------------------
+// 5. Create New Cycle--------------------------------------------------------------------------
 
 function createCycle(f1, f2) {
 
@@ -60,7 +60,7 @@ function createCycle(f1, f2) {
         startyear: v1arYear,
         startmonth: v1arMonth,
         startday: v1arDay,
-        endtyear: v2arYear,
+        endyear: v2arYear,
         endmonth: v2arMonth,
         endday: v2arDay,
         timespan: timeSpan
@@ -74,7 +74,83 @@ function createCycle(f1, f2) {
             currentCycleFrame.style.visibility = "visible"
             newCycleFrame.style.visibility = "hidden";
             console.log("4. " + "Cycle " + newCycleNumber + " has been created and set as active cycle");
-
         })
+}
 
+
+function dayOfCycle() {
+
+    //What day is today?
+    var today = new Date();
+    todayYear = today.getFullYear();
+    todayMonth = today.getMonth() + 1;
+    todayDay = today.getDate();
+
+    if (todayMonth < 10) { todayMonth = '0' + todayMonth }
+    if (todayDay < 10) { todayDay = '0' + todayDay }
+
+    var fullTodayDate = parseInt(todayYear + '' + todayMonth + '' + todayDay);
+
+    console.log("today is " + fullTodayDate);
+
+
+    //Day Of Cycle
+    cycleRef.get().then(function (cycle) {
+        var x = cycle.data();
+
+        var endday = x.endday;
+        var endmonth = x.endmonth;
+        var endyear = x.endyear;
+        var startday = x.startday;
+        var startmonth = x.startmonth;
+        var startyear = x.startyear;
+
+        if (endmonth < 10) { endmonth = '0' + endmonth }
+        if (endday < 10) { endday = '0' + endday }
+        if (startday < 10) { startday = '0' + startday }
+        if (startyear < 10) { startyear = '0' + startyear }
+
+        var fullStartDate = parseInt(startyear + '' + startmonth + '' + startday);
+        var fullEndDate = parseInt(endyear + '' + endmonth + '' + endday);
+
+        if (fullStartDate <= fullTodayDate && fullEndDate >= fullTodayDate) {
+
+
+            console.log("this day is in the cycle");
+
+            function getDaysInMonth(m, y) { // funkce na vypocteni dnu v mesici
+                return /8|3|5|10/.test(--m) ? 30 : m == 1 ? (!(y % 4) && y % 100) || !(y % 400) ? 29 : 28 : 31;
+            }
+
+            var yMonth = todayMonth; // Prvotni hodnoty k loopu
+            var yYear = todayYear;
+            var timeLeft = 1;
+
+            for (; ;) { //tento loop vypocte zbyvajici dny
+                timeLeft = timeLeft + getDaysInMonth(yMonth, yYear); // + pocet dni v prvnim mesici
+                if (yMonth === endmonth && yYear === endyear) // vsechny mesice byly nalezeny
+                {
+                    var y = getDaysInMonth(yMonth, yYear);
+                    timeLeft = timeLeft - (y - endday) - todayDay; //odecti navic dny
+                    break;  //opust foor loop
+                }
+                else if (yMonth === 12) { yYear = yYear + 1; yMonth = 0; } //pokud jdeme do noveho roku
+                yMonth = yMonth + 1; //pricti dalsi mesic
+            }
+///////////////Chyba ... odecita z puvodni hodnoty
+            var moneyLeft = x.left;
+            var newPerDay = moneyLeft / timeLeft;   
+            console.log("Zbyva dni: " + timeLeft + " nove muzes utratit: " + newPerDay);
+
+            cycleRef.update({
+             currperday: newPerDay
+            })
+
+        }
+        else {
+            console.log("this day is not in the cycle");
+        }
+
+
+    });
 }
