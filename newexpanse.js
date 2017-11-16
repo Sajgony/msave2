@@ -18,10 +18,10 @@ function AddExpanse() {
     cycleRef.update({
       spent: newSpent,
       left: newMoneyLeft
-    })
+    }).then(function () {  dayOfCycle();  })
   })
 
-dayOfCycle();
+
 
 
 }

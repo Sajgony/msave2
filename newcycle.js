@@ -98,6 +98,7 @@ function dayOfCycle() {
     cycleRef.get().then(function (cycle) {
         var x = cycle.data();
 
+        var timespan = x.timespan;
         var endday = x.endday;
         var endmonth = x.endmonth;
         var endyear = x.endyear;
@@ -137,14 +138,21 @@ function dayOfCycle() {
                 else if (yMonth === 12) { yYear = yYear + 1; yMonth = 0; } //pokud jdeme do noveho roku
                 yMonth = yMonth + 1; //pricti dalsi mesic
             }
-///////////////Chyba ... odecita z puvodni hodnoty
-            var moneyLeft = x.left;
-            var newPerDay = moneyLeft / timeLeft;   
-            console.log("Zbyva dni: " + timeLeft + " nove muzes utratit: " + newPerDay);
+           
+           
+            var moneyLeft = x.left;  ///////////////Chyba ... Nacita starou hodnotu
+            var newPerDay = moneyLeft / timeLeft;
+            console.log("Zbyva dni: " + timeLeft + " nove muzes utratit: " + newPerDay + " zbyva penez: " + moneyLeft)  ;
 
             cycleRef.update({
-             currperday: newPerDay
+                currperday: newPerDay
             })
+
+            docRef.update({
+                activeday: timespan - timeLeft,
+                daysremaining: timeLeft
+            })
+
 
         }
         else {
@@ -152,5 +160,5 @@ function dayOfCycle() {
         }
 
 
-    });
+    })
 }

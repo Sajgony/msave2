@@ -13,7 +13,7 @@ const startDate = document.querySelector("#startDate");
 
 var User = "";
 var UserData = "";
-var cycleData =""; // not used probably delete it 
+var cycleData = ""; // not used probably delete it 
 var docRef = "";
 var cycleRef = "";
 
@@ -56,14 +56,16 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
       x = doc.data();
       console.log("2.a " + "User: " + x.name + " founded in db");
 
-}
+    }
     else {
       docRef.set({
         email: user.email,
         name: user.displayName,
         picture: user.photoURL,
         uid: user.uid,
-        activecycle: 0
+        activecycle: 0,
+        activeday: -1,
+        daysremaining: -1
       })
         .then(function () {
           console.log("2.b " + "User Created");
@@ -75,7 +77,7 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
     .then(function () {
       docRef.get().then(function (doc) {
         x = doc.data();
-        var cycleRef = x.activecycle;   
+        var cycleRef = x.activecycle;
         if (cycleRef === 0) {
           console.log("3.a " + "User's cycle is 0, loading new cycle interface");
           newCycleFrame.style.visibility = "visible";
@@ -93,8 +95,8 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
         UserData = doc.data(); //Exposing UserData 
         cycleRef = firestore.doc('/msave/core/users/' + UserData.email + '/cycles/' + UserData.activecycle); // Exposing cuurent Cycle
         if (UserData.activecycle != 0) { //don't update for brand new user
-        
-        mainScreen();
+          dayOfCycle();
+          mainScreen();
         }
       })
     })
