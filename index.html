@@ -8,80 +8,130 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
 </head>
 
 <body>
-
-
   <div class="container">
     <div class="row">
-      <div class="col s6 offset-s3">
-
+      <div class="col l8 offset-l2 m12">
+        <br>
         <h5 id="name"></h5>
-
-        <div id="currentCycleFrame">
-          My Budget: <input id="showBudget" value="loading ..."></input><br>
-          I have spent: <input id="showSpent" value="loading ..."></input><br>         
-          Money Left: <input id="showMoneyLeft" value="loading ..."></input><br>
-          Initially Spent / day:<input id="showSpentperDay" value="loading ..."></input><br>
-          Now Spent / day:<input id="showNewSpentperDay" value="loading ..."></input><br>
-
-          <select id="currentDay" name="Current Day">
-  <option value="1">Day 1</option>
-  <option value="2">Day 2</option>
-  <option value="3">Day 3</option>
-  <option value="4">Day 4</option>
-</select>
+        <br>
 
 
-          <br> Add Expanse: <input type="number" id="addExpanseInput" value="">
-          <button type="button" onclick="AddExpanse()">Send Value</button><br>
-          <button type="button" onclick="document.getElementById('newCycleFrame').style.visibility = 'visible'">
-New Cycle</button>
+        <div class="z-depth-3" id="currentCycleFrame">
+
+          <div class="row">
+            <div class="col l4 m6">
+              My Budget:
+              <input id="showBudget" value="loading ..." disabled>
+            </div>
+            <div class="col l4 m6">
+              Money spent:
+              <input id="showSpent" value="loading ..." disabled>
+            </div>
+            <div class="col l4 m12">
+              Money Left:
+              <input id="showMoneyLeft" value="loading ..." disabled>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col l6 m12">
+              Initially Spent / day:
+              <input id="showSpentperDay" value="loading ..." disabled>
+            </div>
+            <div class="col l6 m12">
+              Now Spent / day:
+              <input id="showNewSpentperDay" value="loading ..." disabled>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col l12 m12">
+              Add Expanse:
+              <input type="number" id="addExpanseInput" value="">
+            </div>
+            <div class="col l12 m12">
+              <button type="button" class="waves-effect waves-light btn" onclick="AddExpanse()">Send Value</button>
+              <a class="waves-effect waves-light btn modal-trigger red" href="#modal1">New Cycle</a>
+            </div>
+          </div>
+
         </div>
 
 
-        <div id="newCycleFrame">
 
-          <div class="col s6">
-            Start Cycle: <input type="date" id="field1">
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal bottom-sheet">
+          <div class="modal-content">
+
+            <div class="row">
+              <div class="col s6">
+                Start Cycle:
+                <input type="date" id="field1">
+              </div>
+              <div class="col s6">
+                End Cycle:
+                <input type="date" id="field2">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                Budget:
+                <input id="NewBudgetValue" type="number" value="" required>
+                <br>
+
+              </div>
+            </div>
           </div>
-          <div class="col s6">
-            End Cycle: <input type="date" id="field2">
+
+          <div class="modal-footer">
+            <a href="#!" onClick="createCycle('field1','field2')" value="Submit" class="modal-action modal-close waves-effect waves-light btn">Submit</a>
           </div>
-          Budget: <input id="NewBudgetValue" type="number" value="" required> 
-            <br>
-            <input type="button" onClick="createCycle('field1','field2')" value="Submit">
         </div>
 
 
 
-        <!--Import Firebase  -->
-        <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
-        <script src="script.js"></script>
-        <script src="newcycle.js"></script>
-        <script src="newexpanse.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+
+
 
       </div>
     </div>
   </div>
-
 </body>
 
 
+
+<!--Import Firebase  -->
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+<script src="script.js"></script>
+<script src="newcycle.js"></script>
+<script src="newexpanse.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+
 <script>
-                                          $('.datepicker').pickadate({
-                                            selectMonths: true, // Creates a dropdown to control month
-                                            selectYears: 15, // Creates a dropdown of 15 years to control year,
-                                            today: 'Today',
-                                            clear: 'Clear',
-                                            close: 'Ok',
-                                            closeOnSelect: false // Close upon selecting a date,
-                                          });
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+
+
+  $(document).ready(function () {
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+
 </script>
 
 </html>

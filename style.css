@@ -1,13 +1,11 @@
 #newCycleFrame {
     padding: 2rem;
-    border: 1px dotted silver;
      margin-top: 4rem;
      visibility: hidden; 
      }
 
 #currentCycleFrame {
     padding: 2rem; 
-    border: 1px dotted silver;
    visibility: hidden;
     }
 

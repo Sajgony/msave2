@@ -20,8 +20,4 @@ function AddExpanse() {
       left: newMoneyLeft
     }).then(function () {  dayOfCycle();  })
   })
-
-
-
-
 }
